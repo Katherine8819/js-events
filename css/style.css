@@ -6,35 +6,70 @@
 
 html {
   height: 100%;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 body {
-  min-height: 100%;
   font: 400 1/4rem/1.6 "Poppins", sans-serif;
   color: #444;
 }
 
-a,
-button {
-  transition: all 0.25s ease-in;
+
+div, textarea {
+  display: block;
+  max-width: 50%;
+  margin: 100px auto;
+  padding: 15px;
+}
+
+div {
+  width: 500px;
+  height: 400px;
+  background-color: rgb(255, 234, 234);
+}
+
+textarea {
+  outline: none;
+  color: #005e00;
+  border: 3px solid #2d9c2d;
+  background-color: #e8fce8;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+}
+
+
+textarea:focus {
+  border-style: dashed;
+  border-radius: 40px;
+}
+
+thead {
+  border-collapse: collapse;
+  border: 1px solid green;
 }
 
 
 table {
-  margin: 0 auto;
-  width: 50%;
-  height: 100vh;
-  
+  margin: 100px auto;
   text-align: center;
+  border-collapse: collapse
 }
 
-td {
-  width: 50px;
-  height: 50px;
-  border: 1px solid green;
+td, th {
+  padding: 8px;
+  border: 1px solid #0a1286;
 }
 
-td:first-child {
+th {
+  cursor: pointer;
+}
+
+#hint {
+  display: block;
+  max-width: 300px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 10px;
   font-weight: 700;
+  background-color: #edfad8;
 }

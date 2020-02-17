@@ -1,9 +1,21 @@
 let el = document.querySelector('div')
+el.removeAttribute('hidden')
+
+let hint = document.getElementById('hint'),
+    message = '';
+
+
+message = 'Чтобы отредактировать текст, нажмите Ctrl + E'
+hint.innerHTML += message
 
 document.addEventListener('keydown', function (event) {
 
+
     if (event.code == 'KeyE' && (event.ctrlKey || event.metaKey) && el == document.querySelector('div')) {
         event.preventDefault()
+        message = 'Чтобы сохранить измененный текст, нажмите Ctrl +'
+        hint.innerHTML = message
+
         newEl = document.createElement("textarea");
         newEl.textContent = el.textContent;
         newEl.cols = "40";
@@ -13,6 +25,9 @@ document.addEventListener('keydown', function (event) {
 
         document.addEventListener('keydown', function (event) {
             if (event.key == '+' && (event.ctrlKey || event.metaKey) && el == document.querySelector('textarea')) {
+                message = 'Чтобы отредактировать текст, нажмите Ctrl + E'
+                hint.innerHTML = message
+
                 event.preventDefault()
                 newEl = document.createElement("div");
                 newEl.textContent = el.value;
